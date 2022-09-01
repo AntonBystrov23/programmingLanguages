@@ -8,15 +8,15 @@ Console.Write("Введите число: ");
 string? inputLine = Console.ReadLine();
 if (inputLine != null)
 {
-    int inputNumber = int.Parse(inputLine);
-    if (inputNumber > 99 && inputNumber < 1000)
+    int inputNumber = int.Parse(inputLine);                     // сначала вводим число, проверяем на null и переводим его в целостный вид
+    if (inputNumber > 99 && inputNumber < 1000)                // включаем диапазон всех трехзначных чисел
     {
-        int lastDigit = inputNumber%10;
+        int lastDigit = inputNumber%10;              // вводим новую переменную "последнее число" и получаем ее с помощью остатка от деления на 10
         Console.WriteLine(lastDigit);
     }
     else
     {
-    Console.WriteLine("Введите корректное число!");
+    Console.WriteLine("Введите корректное число!");   
     }
 }
 

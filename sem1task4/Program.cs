@@ -23,10 +23,11 @@ if (inputLineA != null && inputLineB != null && inputLineC != null)        // п
     if (inputNumberB >= maxNumber)
     {
         maxNumber = inputNumberB;
-        if (inputNumberC >= maxNumber)          // сравниваем два оставшихся числа с max и выводим результат
-        {
-            maxNumber = inputNumberC;
-        }
-        Console.WriteLine("A = " + inputNumberA + ", B = " + inputNumberB + ", C = " + inputNumberC + ", max = " + maxNumber);
     }
+    if (inputNumberC >= maxNumber)          // сравниваем два оставшихся числа с max и выводим результат
+    {
+        maxNumber = inputNumberC;
+    }
+ Console.WriteLine("A = " + inputNumberA + ", B = " + inputNumberB + ", C = " + inputNumberC + ", max = " + maxNumber);
 }
+

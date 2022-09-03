@@ -1,7 +1,7 @@
 ﻿// Задача №13: Напишите программу, которая принимает на вход трёхзначное число 
 // и на выходе показывает третью цифру или сообщает, что нет такого числа.
 
-Console.Write("Введите трехзначное число: ");    // получаем трехзначное число
+Console.Write("Введите число: ");    // получаем трехзначное число
 string? inputLineNumber = Console.ReadLine();
 int lengthNumber = inputLineNumber.Length;
 void showResultString()         // создание массива из строки
@@ -36,6 +36,6 @@ if (inputLineNumber != null)
 }
 }
 showResultString();
-showResultInteger();
+// showResultInteger();
 
 

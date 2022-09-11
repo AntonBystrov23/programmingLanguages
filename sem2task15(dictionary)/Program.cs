@@ -17,7 +17,7 @@
 
 
 Console.WriteLine("Введите день недели."); 
-string? inputNumber = Console.ReadLine();
+string? inputNumber = Console.ReadLine()?? "0";
 int number = int.Parse(inputNumber);
 
 // 1)-------------

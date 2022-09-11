@@ -3,7 +3,7 @@
 // ============================================================================
 
 Console.Write("Введите день недели(число от 1 до 7): ");
-string? inputLine = Console.ReadLine();
+string? inputLine = Console.ReadLine()?? "0";
 int inputNumber = int.Parse(inputLine);
 string[] dayOfWeek = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }; // создание массива
 

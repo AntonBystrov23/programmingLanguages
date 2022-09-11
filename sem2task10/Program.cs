@@ -2,7 +2,7 @@
 // и на выходе показывает вторую цифру этого числа.
 
 Console.Write("Введите трехзначное число: ");
-string? inputLineA = Console.ReadLine(); // получаем трехзначное число
+string? inputLineA = Console.ReadLine()?? "0"; // получаем трехзначное число
 int lengthNumber = inputLineA.Length;
 void showResult()          // проверка на соответствие вводимого числа.Перевод в массив. Вывод искомого
 {

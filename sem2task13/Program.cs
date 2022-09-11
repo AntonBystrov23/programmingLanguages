@@ -2,7 +2,7 @@
 // и на выходе показывает третью цифру или сообщает, что нет такого числа.
 
 Console.Write("Введите число: ");    // получаем трехзначное число
-string? inputLineNumber = Console.ReadLine();
+string? inputLineNumber = Console.ReadLine()?? "0";
 int lengthNumber = inputLineNumber.Length;
 void showResultString()         // создание массива из строки
 {          
@@ -19,7 +19,7 @@ if (inputLineNumber != null)
     }
 }
 }
-void showResultInteger()        // переход к целочисленному значению
+// void showResultInteger()        // переход к целочисленному значению
 {          
 if (inputLineNumber != null)
 {    

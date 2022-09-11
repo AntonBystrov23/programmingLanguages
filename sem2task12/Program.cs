@@ -7,11 +7,11 @@ bool result = false;
 void printData()  // вводим данные
 {
 Console.Write("Введите первое число: ");
-string? inputLineA = Console.ReadLine();  
+string? inputLineA = Console.ReadLine()?? "0";  
 Console.Write("Введите второе число: ");
-string? inputLineB = Console.ReadLine();
+string? inputLineB = Console.ReadLine()?? "0";
 inputNumberA = int.Parse(inputLineA);
-inputNumberB = int.Parse(inputLineB);
+inputNumberB = int.Parse(inputLineB); 
 }
 void calculateData()
 {

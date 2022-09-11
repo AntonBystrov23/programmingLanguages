@@ -6,7 +6,7 @@ bool result = false;
 void printData()  // вводим данные
 {
 Console.Write("Введите число: ");
-string? inputLineA = Console.ReadLine();  
+string? inputLineA = Console.ReadLine()?? "0";  
 inputNumberA = int.Parse(inputLineA);
 }
 void calculateData()

@@ -48,38 +48,26 @@ PrintResult(CalculateDate1(GetDate("Введите число:"), GetDate("Вв�
 
 // string GetDate(string line)
 // {
-//     //Выводим сообщение
-//     Console.WriteLine(line);
-//     //Считываем число
+//     Console.WriteLine(line);  //Выводим сообщение
 //     //int number = int.Parse(Console.ReadLine() ?? "0");
-//     string number = Console.ReadLine() ?? "0";
-
-//     //Возвращаем значение
-//     return number;
+//     string number = Console.ReadLine() ?? "0";  //Считываем число
+//     return number; //Возвращаем значение
 // }
-/// long MainCalculate(string num1, string signOfOperate, string num2) // Полученные числа м символ в подходящую формулу
+// long MainCalculate(string num1, string signOfOperate, string num2) // Полученные числа м символ в подходящую формулу
 // { 
 //      int number1 = Convert.ToInt32(num1); 
 //      int number2 = Convert.ToInt32(num2); 
 //      char sign = Convert.ToChar(signOfOperate);
 //      long res = 0;
 //     if(sign == '-')
-//     {
 //         res = number1 - number2;
-//     }
-//     if(sign == '+')
-//     {
+//     else if(sign == '+')
 //         res = number1 + number2;
-//     }
-//     if(sign == '/')
-//     {
+//     else if(sign == '/')
 //         res = number1 / number2;
-//     }
-//     if(sign == '*')
-//     {
+//     else if(sign == '*')
 //         res = number1 * number2;
-//     }
-//     if(sign == '^')
+//     else if(sign == '^')
 //     {
 //         double numberSqr1 = Convert.ToDouble(number1); 
 //         double numberSqr2 = Convert.ToDouble(number2); 

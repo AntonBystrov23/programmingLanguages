@@ -2,31 +2,71 @@
 // 452 -> 11
 // 82 -> 10
 // 9012 -> 12
-string GetDate(string line)                           // Получаем данные от пользователя
+
+//-----РЕШЕНИЕ С ПЕРЕВОДОМ В СТРОКУ:ВЫДЕРГИВАЮ ПО ЭЛЕМЕНТУ,КОНВЕРТИРУЮ,СУММИРУЮ.(ЗАТРАТНЫЙ ВАРИАНТ)
+
+// string GetDate(string line)                           // Получаем данные от пользователя
+
+// {
+//     Console.WriteLine(line);                         // Выводим сообщение
+//     string number = Console.ReadLine() ?? "0";       // Считываем число
+//     return number;                                   // Возвращаем значение
+// }
+// int CalcDateFor(string numbers)                       // Метод подсчета суммы чисел (вычленяем каждый элемент строки и суммируем)              
+// {
+//     int length = numbers.Length;                     // Выявляем длинну
+//     int sum = 0;
+//     for (int index = 0; index < length; index++)     // Цикл: 
+//     {
+//         string digit = numbers.Substring(index, 1);  // Берем поочереди каждый символ
+//         int number = int.Parse(digit);               // Приводим к целому числу
+//         sum = sum + number;                          // суммируем с предыдущим результатом
+//     }
+//     return sum;
+// }
+
+// void PrintResult(int calculateResult)                 // Метод: выводим результат            
+// {
+//     Console.WriteLine("Сумма равна: " + calculateResult);
+// }
+
+// string inputedNumber = GetDate("Введите число: ");
+// DateTime d1 = DateTime.Now;
+// int resultOfCalculate = CalcDateFor(inputedNumber);
+// Console.WriteLine("Время, затраченное на решение: " + (DateTime.Now - d1));
+// PrintResult(resultOfCalculate);
+
+//-----РЕШЕНИЕ С ДЕЛЕНИЕМ.(ОПТИМАЛЬНЫЙ ВАРИАНТ)
+
+
+int GetDate(string line)                           // Получаем данные от пользователя
+
 {
     Console.WriteLine(line);                         // Выводим сообщение
-    string number = Console.ReadLine() ?? "0";       // Считываем число
+    int number = int.Parse(Console.ReadLine() ?? "0");       // Считываем число
     return number;                                   // Возвращаем значение
 }
-int CalculateDate1(string numbers)                    // Метод подсчета суммы чисел (вычленяем каждый элемент строки и суммируем)
+
+int CalcDateDiv(int numbers)                       // Метод подсчета суммы чисел. Остаток от деления на десять
 {
-    int length = numbers.Length;                     // Выявляем длинну
     int sum = 0;
-    for (int index = 0; index < length; index++)     // Цикл: 
+    int digit;
+    while (numbers > 0)                            // Цикл: 
     {
-        string digit = numbers.Substring(index, 1);  // Берем поочереди каждый символ
-        int number = int.Parse(digit);               // Приводим к целому числу
-        sum = sum + number;                          // суммируем с предыдущим результатом
+        digit = numbers%10;
+        sum = sum + digit;
+        numbers = numbers / 10;                          // суммируем с предыдущим результатом
     }
     return sum;
 }
-void PrintResult(int calculateResult)                 // Метод: выводим результат
+
+void PrintResult(int calcResult)                   // Метод: выводим результат            
 {
-    Console.WriteLine("Сумма равна: " + calculateResult);
+    Console.WriteLine("Сумма равна: " + calcResult);
 }
-string inputedNumber = GetDate("Введите число: ");
+
+int inputedNumber = GetDate("Введите число: ");
 DateTime d1 = DateTime.Now;
-int resultOfCalculate = CalculateDate1(inputedNumber);
+int resultOfCalculate = CalcDateDiv(inputedNumber);
 Console.WriteLine("Время, затраченное на решение: " + (DateTime.Now - d1));
 PrintResult(resultOfCalculate);
-

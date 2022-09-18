@@ -53,6 +53,86 @@ void PrintResultDiff(double num, string line)
     Console.WriteLine("Разница между max и min = " + num);
 }
 
-double[] arrRandNum = FillArray(10, 0, 100);
+// Метод: поменять два элемента в массиве местами
+void Swap(double[] array, int i, int j)
+{
+    double buffer = array[i];
+    array[i] = array[j];
+    array[j] = buffer;
+}
+
+// Метод сортировки вставками
+double[] PasteSort(double[] array)
+{
+    double minNum;
+    int indexMin;
+    for (int i = 1; i < array.Length; i++)
+    {
+        minNum = array[i];
+        indexMin = i;
+        while (indexMin > 0 && array[indexMin - 1] > minNum)
+        {
+            Swap(array, indexMin, indexMin - 1);
+            indexMin -= 1;
+        }
+        array[indexMin] = minNum;
+    }
+    return array;
+}
+
+// Метод сортировки подсчетом
+double[] CalculateSort(double[] array)
+{
+    double[] changeArray = new double[array.Length];
+
+    for (byte i = 0; i < array.Length; i++)
+    {
+        int count = 0;
+        for (byte j = 0; j < array.Length; j++)
+        {
+            if (array[i] > array[j] || (array[i] == array[j] && j > i))
+                count++;
+        }
+        changeArray[count] = array[i];
+    }
+
+    return changeArray;
+}
+
+// Метод сортировки пузырь
+double[] BubblesSort(double[] array)
+{
+    for (int i = array.Length - 1; i >= 1; i--)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (array[j] > array[j + 1])
+            {
+                Swap(array, j, j + 1);
+            }
+        }
+    }
+    return array;
+}
+
+DateTime r0 = DateTime.Now;
+double[] arrRandNum = FillArray(50, 0, 100);
+Console.WriteLine("Время генерации массива: " + (DateTime.Now - r0));
+
 Print1DArray(arrRandNum, "Массив: ");
 PrintResultDiff(FindDiffMaxMin(arrRandNum), "Max и min значения массива: ");
+
+DateTime d0 = DateTime.Now;
+double[] PastSortArray = PasteSort(arrRandNum);
+Console.WriteLine("Время, затраченное на решение методом 'вставки': " + (DateTime.Now - d0));
+Print1DArray(PastSortArray, "Отсортированный методом 'вставки' массив: ");
+
+DateTime d1 = DateTime.Now;
+double[] BubbleSortArray = BubblesSort(arrRandNum);
+Console.WriteLine("Время, затраченное на решение методом 'Bubbles': " + (DateTime.Now - d1));
+Print1DArray(BubbleSortArray, "Отсортированный методом 'Bubbles' массив: ");
+
+DateTime d2 = DateTime.Now;
+double[] CalculateSortArray = CalculateSort(arrRandNum);
+Console.WriteLine("Время, затраченное на решение методом 'подсчета': " + (DateTime.Now - d2));
+Print1DArray(CalculateSortArray, "Отсортированный методом 'подсчета' массив: ");

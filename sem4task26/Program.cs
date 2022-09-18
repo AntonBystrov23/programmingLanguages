@@ -29,6 +29,7 @@ int CountDigits3(int num)              // Ищем длинну   LOG10
 {
     return (int)(Math.Log10(num)+1);
 }
+
 void PrintResult(int res)
 {
     Console.WriteLine("Колличество цифр в числе равно: " + res);

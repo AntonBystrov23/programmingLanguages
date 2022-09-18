@@ -44,6 +44,8 @@ void PrintCountNums(int count, string line)
     Console.WriteLine(count);
 }
 
+// Поиск пар в массиве
+
 int[] arrRandNum = FillArray(10, 0, 10);
 Print1DArray(arrRandNum, "Массив чисел: ");
 PrintCountNums(FindSumNums(arrRandNum), "Сумма элементов, стоящих на нечётных позициях: ");

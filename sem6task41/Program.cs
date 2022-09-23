@@ -91,7 +91,3 @@ void PrintResult(string prefix, int value)
 PrintResult("Результат: ", CountNumsAboveZero(ReadDate("Введите колличество цифр: ")));
 
 
-// string key = Console.ReadKey();
-// key == ConsoleKey.D0;
-// key == ConsoleKey.NumPad0;
-
